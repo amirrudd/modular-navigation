@@ -1,10 +1,8 @@
-apply plugin: 'com.android.dynamic-feature'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 dependencies {
-    implementation project(':app')
-    implementation project(':leaderboard_api')
     implementation project(':navigator')
     implementation project(':nav')
 

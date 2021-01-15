@@ -15,16 +15,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    dynamicFeatures = [":leaderboard"]
 }
 
 dependencies {
     implementation project(':navigator')
+    implementation project(':leaderboard')
     implementation project(':questions')
     implementation project(':question')
     implementation project(':result')
-    implementation project(':leaderboard_api')
     implementation project(':nav')
 
     implementation deps.appCompat

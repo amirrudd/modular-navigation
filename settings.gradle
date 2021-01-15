@@ -1,2 +1,1 @@
-include ':nav'
-include ':app', ':questions', ':question', ':result', ':leaderboard', ':leaderboard_api', ':navigator'
+include ':app', ':questions', ':question', ':result', ':leaderboard', ':navigator', ':nav'

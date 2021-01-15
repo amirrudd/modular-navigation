@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/leaderboardFragment"
         android:name="me.vponomarenko.modular.navigation.leaderboard.LeaderboardFragment"
-        android:label="LeaderboardFragment" >
+        android:label="LeaderboardFragment">
         <action
             android:id="@+id/action_leaderboardFragment_to_leaderFragment"
             app:destination="@id/leaderFragment" />

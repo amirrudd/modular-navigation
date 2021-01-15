@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.nav.Store
 import kotlinx.android.synthetic.main.fragment_questions.*
 
@@ -39,5 +40,10 @@ class QuestionsFragment : Fragment() {
         button_leaderboard.setOnClickListener {
             navigation.openLeaderboard()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        navigation.bind(findNavController())
     }
 }

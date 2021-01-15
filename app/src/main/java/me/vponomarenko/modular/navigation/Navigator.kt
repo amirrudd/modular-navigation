@@ -1,7 +1,7 @@
 package me.vponomarenko.modular.navigation
 
 import me.vponomarenko.modular.navigation.common.BaseNavigator
-import me.vponomarenko.modular.navigation.leaderboard.api.LeaderboardNavigation
+import me.vponomarenko.modular.navigation.leaderboard.LeaderboardNavigation
 import me.vponomarenko.modular.navigation.question.QuestionFragment
 import me.vponomarenko.modular.navigation.question.QuestionNavigation
 import me.vponomarenko.modular.navigation.questions.QuestionsNavigation
@@ -14,9 +14,9 @@ import me.vponomarenko.modular.navigation.result.wrong.WrongAnswerNavigation
  * LinkedIn: https://www.linkedin.com/in/ponomarenkovalery
  */
 
-internal class Navigator : BaseNavigator(), QuestionsNavigation, QuestionNavigation, RightAnswerNavigation,
-    WrongAnswerNavigation,
-    LeaderboardNavigation {
+internal class Navigator : BaseNavigator(), QuestionsNavigation, QuestionNavigation,
+    RightAnswerNavigation,
+    WrongAnswerNavigation, LeaderboardNavigation {
 
     override fun openQuestion(questionId: Long) {
         navController?.navigate(
@@ -47,8 +47,7 @@ internal class Navigator : BaseNavigator(), QuestionsNavigation, QuestionNavigat
 
     override fun openQuestionPreview(questionId: Long) {
         navController?.navigate(
-            R.id.action_leaderboardFeatureFragment_to_questionFragment,
-            QuestionFragment.createBundle(questionId, true)
+            R.id.action_to_questionFragment, QuestionFragment.createBundle(questionId, true)
         )
     }
 }

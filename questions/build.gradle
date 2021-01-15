@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android-extensions'
 
 dependencies {
     implementation project(':nav')
+    implementation project(':navigator')
+    implementation deps.navigation
     implementation deps.appCompat
     implementation deps.constraintLayout
 }

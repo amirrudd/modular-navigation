@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.nav.Store
 import kotlinx.android.synthetic.main.fragment_leader.*
-import me.vponomarenko.modular.navigation.leaderboard.api.LeaderboardNavigation
 
 /**
  * Author: Valery Ponomarenko

@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onPause() {
-        super.onPause()
         navigator.unbind()
+        super.onPause()
     }
 
     override fun onSupportNavigateUp(): Boolean =

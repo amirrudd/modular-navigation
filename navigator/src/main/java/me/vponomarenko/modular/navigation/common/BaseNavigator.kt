@@ -8,15 +8,15 @@ import androidx.navigation.NavController
  * LinkedIn: https://www.linkedin.com/in/ponomarenkovalery
  */
 
-abstract class BaseNavigator {
+abstract class BaseNavigator : BaseNavigatorInterface {
 
     protected var navController: NavController? = null
 
-    fun bind(navController: NavController) {
+    override fun bind(navController: NavController) {
         this.navController = navController
     }
 
-    fun unbind() {
+    override fun unbind() {
         navController = null
     }
 }
