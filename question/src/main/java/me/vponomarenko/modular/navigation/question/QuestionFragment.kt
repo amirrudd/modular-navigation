@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.nav.Store
 import kotlinx.android.synthetic.main.fragment_question.*
-import me.vponomarenko.injectionmanager.x.XInjectionManager
 
 /**
  * Author: Valery Ponomarenko
@@ -27,9 +27,7 @@ class QuestionFragment : Fragment() {
             }
     }
 
-    private val navigation: QuestionNavigation by lazy {
-        XInjectionManager.findComponent<QuestionNavigation>()
-    }
+    private val navigation = Store.instance.getNavigator() as QuestionNavigation
 
     private val questionId: Long by lazy {
         arguments?.getLong(EXTRA_QUESTION_ID) ?: throw IllegalStateException("no questionId")
@@ -39,7 +37,11 @@ class QuestionFragment : Fragment() {
         arguments?.getBoolean(EXTRA_IS_PREVIEW) ?: throw IllegalStateException("no questionId")
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? =
         inflater.inflate(R.layout.fragment_question, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

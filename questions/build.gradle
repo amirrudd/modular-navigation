@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 dependencies {
+    implementation project(':nav')
     implementation deps.appCompat
-    implementation deps.componentsManager
     implementation deps.constraintLayout
 }

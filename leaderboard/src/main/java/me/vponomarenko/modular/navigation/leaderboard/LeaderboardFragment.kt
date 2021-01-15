@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.nav.Store
 import kotlinx.android.synthetic.main.fragment_leaderboard.*
 
 /**
@@ -16,10 +17,13 @@ import kotlinx.android.synthetic.main.fragment_leaderboard.*
 
 class LeaderboardFragment : Fragment() {
 
-    private val navigator: Navigator
-        get() = LeaderboardModuleBinder.navigator
+    private val navigator: Navigator = Store.instance.getNavigator() as Navigator
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? =
         inflater.inflate(R.layout.fragment_leaderboard, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

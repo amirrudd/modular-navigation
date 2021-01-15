@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.nav.Store
 import kotlinx.android.synthetic.main.fragment_wrong.*
-import me.vponomarenko.injectionmanager.x.XInjectionManager
 import me.vponomarenko.modular.navigation.result.R
 
 /**
@@ -17,11 +17,13 @@ import me.vponomarenko.modular.navigation.result.R
 
 class WrongAnswerFragment : Fragment() {
 
-    private val navigation: WrongAnswerNavigation by lazy {
-        XInjectionManager.findComponent<WrongAnswerNavigation>()
-    }
+    private val navigation = Store.instance.getNavigator() as WrongAnswerNavigation
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? =
         inflater.inflate(R.layout.fragment_wrong, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

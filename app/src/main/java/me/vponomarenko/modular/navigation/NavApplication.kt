@@ -1,8 +1,7 @@
 package me.vponomarenko.modular.navigation
 
 import android.app.Application
-import me.vponomarenko.injectionmanager.IHasComponent
-import me.vponomarenko.injectionmanager.x.XInjectionManager
+import com.example.nav.Store
 
 /**
  * Author: Valery Ponomarenko
@@ -13,9 +12,6 @@ import me.vponomarenko.injectionmanager.x.XInjectionManager
 class NavApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        XInjectionManager.init(this)
-        XInjectionManager.bindComponentToCustomLifecycle(object : IHasComponent<Navigator> {
-            override fun getComponent(): Navigator = Navigator()
-        })
+        Store.instance.storeNavigator(Navigator())
     }
 }

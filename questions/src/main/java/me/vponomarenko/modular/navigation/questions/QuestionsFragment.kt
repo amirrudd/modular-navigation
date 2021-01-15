@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.nav.Store
 import kotlinx.android.synthetic.main.fragment_questions.*
-import me.vponomarenko.injectionmanager.x.XInjectionManager
 
 /**
  * Author: Valery Ponomarenko
@@ -16,11 +16,13 @@ import me.vponomarenko.injectionmanager.x.XInjectionManager
 
 class QuestionsFragment : Fragment() {
 
-    private val navigation: QuestionsNavigation by lazy {
-        XInjectionManager.findComponent<QuestionsNavigation>()
-    }
+    private val navigation = Store.instance.getNavigator() as QuestionsNavigation
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? =
         inflater.inflate(R.layout.fragment_questions, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.nav.Store
 import kotlinx.android.synthetic.main.fragment_leader.*
-import me.vponomarenko.injectionmanager.x.XInjectionManager
 import me.vponomarenko.modular.navigation.leaderboard.api.LeaderboardNavigation
 
 /**
@@ -26,15 +26,17 @@ class LeaderFragment : Fragment() {
             }
     }
 
-    private val leaderboardNavigation by lazy {
-        XInjectionManager.findComponent<LeaderboardNavigation>()
-    }
+    private val leaderboardNavigation = Store.instance.getNavigator() as LeaderboardNavigation
 
     private val leaderName by lazy {
         arguments?.getString(EXTRA_QUESTION_ID) ?: throw IllegalStateException("no name")
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? =
         inflater.inflate(R.layout.fragment_leader, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

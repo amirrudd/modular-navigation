@@ -25,8 +25,8 @@ dependencies {
     implementation project(':question')
     implementation project(':result')
     implementation project(':leaderboard_api')
+    implementation project(':nav')
 
     implementation deps.appCompat
-    implementation deps.componentsManager
     implementation deps.navigation
 }

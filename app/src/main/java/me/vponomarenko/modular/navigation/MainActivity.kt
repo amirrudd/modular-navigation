@@ -3,13 +3,11 @@ package me.vponomarenko.modular.navigation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import me.vponomarenko.injectionmanager.x.XInjectionManager
+import com.example.nav.Store
 
 class MainActivity : AppCompatActivity() {
 
-    private val navigator: Navigator by lazy {
-        XInjectionManager.findComponent<Navigator>()
-    }
+    private val navigator = Store.instance.getNavigator() as Navigator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,5 +24,6 @@ class MainActivity : AppCompatActivity() {
         navigator.unbind()
     }
 
-    override fun onSupportNavigateUp(): Boolean = findNavController(R.id.nav_host_fragment).navigateUp()
+    override fun onSupportNavigateUp(): Boolean =
+        findNavController(R.id.nav_host_fragment).navigateUp()
 }

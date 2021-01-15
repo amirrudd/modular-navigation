@@ -6,9 +6,9 @@ dependencies {
     implementation project(':app')
     implementation project(':leaderboard_api')
     implementation project(':navigator')
+    implementation project(':nav')
 
     implementation deps.appCompat
-    implementation deps.componentsManager
     implementation deps.navigation
 }
 
