@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="not_verified_title">ยังไม่ได้รับการยืนยัน</string>
+    <string name="title_leaderboard">ลีดเดอร์บอร์ด</string>
+</resources>

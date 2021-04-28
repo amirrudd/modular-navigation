@@ -1,0 +1,34 @@
+phrase:
+  access_token: 9b644f2a4d5056c18be1d55a5f550054450a8fe319d63cd2741f539b84b42857
+  file_format: xml
+  project_id: 2190a8b1251db47a21c10cd88d3b4409
+  pull:
+    targets:
+      - file: ./profile/presentaion/src/main/res/values/profile-strings.xml
+        params:
+          locale_id: a15214317a6fe093376c221c0b7685c4 #En
+
+      - file: ./navigator/src/main/res/values/strings.xml
+        params:
+          locale_id: a15214317a6fe093376c221c0b7685c4 #En
+
+      - file: ./app/src/main/res/values-th/strings.xml
+        params:
+          locale_id: 13bea7406191b45a9519f0bcb31314e5 #Th
+  #          include_empty_translations: true
+  #          fallback_locale_id: a15214317a6fe093376c221c0b7685c4
+
+  push:
+    sources:
+      - file: ./app/src/main/res/values/strings.xml
+        params:
+          locale_id: a15214317a6fe093376c221c0b7685c4 #En
+          format_options:
+            convert_placeholder: true
+            escape_linebreaks: true
+      - file: ./navigator/src/main/res/values/strings.xml
+        params:
+          locale_id: a15214317a6fe093376c221c0b7685c4 #En
+          format_options:
+            convert_placeholder: true
+            escape_linebreaks: true
