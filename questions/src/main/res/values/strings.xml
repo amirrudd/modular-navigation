@@ -1,6 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
+    <string name="change_language">Change language</string>
     <string name="first_question">First question</string>
+    <string name="leaderboard">Leaderboard</string>
     <string name="second_question">Second question</string>
     <string name="third_question">Third question</string>
-    <string name="leaderboard">Leaderboard</string>
 </resources>

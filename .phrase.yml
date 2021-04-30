@@ -4,15 +4,11 @@ phrase:
   project_id: 2190a8b1251db47a21c10cd88d3b4409
   pull:
     targets:
-      - file: ./profile/presentaion/src/main/res/values/profile-strings.xml
+      - file: ./questions/src/main/res/values/strings.xml
         params:
           locale_id: a15214317a6fe093376c221c0b7685c4 #En
 
-      - file: ./navigator/src/main/res/values/strings.xml
-        params:
-          locale_id: a15214317a6fe093376c221c0b7685c4 #En
-
-      - file: ./app/src/main/res/values-th/strings.xml
+      - file: ./questions/src/main/res/values-th/strings.xml
         params:
           locale_id: 13bea7406191b45a9519f0bcb31314e5 #Th
   #          include_empty_translations: true
@@ -20,13 +16,7 @@ phrase:
 
   push:
     sources:
-      - file: ./app/src/main/res/values/strings.xml
-        params:
-          locale_id: a15214317a6fe093376c221c0b7685c4 #En
-          format_options:
-            convert_placeholder: true
-            escape_linebreaks: true
-      - file: ./navigator/src/main/res/values/strings.xml
+      - file: ./questions/src/main/res/values/strings.xml
         params:
           locale_id: a15214317a6fe093376c221c0b7685c4 #En
           format_options:

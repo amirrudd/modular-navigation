@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<resources>
-    <string name="not_verified_title">Not verified yet</string>
-    <string name="title_leaderboard">Leaderboard</string>
-    <string name="welcome_title">Welcome %1$s,\nHope you enjoy your stay!</string>
-    <!-- profile -->
-    <string name="welcome_title_sub">Subtitle</string>
-</resources>
