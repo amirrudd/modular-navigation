@@ -1,6 +1,9 @@
 package me.vponomarenko.modular.navigation.questions
 
+import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.nav.Store
 import kotlinx.android.synthetic.main.fragment_questions.*
+
 
 /**
  * Author: Valery Ponomarenko
@@ -40,10 +44,53 @@ class QuestionsFragment : Fragment() {
         button_leaderboard.setOnClickListener {
             navigation.openLeaderboard()
         }
+
+        change_lang.setOnClickListener { changeLanguage() }
     }
 
     override fun onResume() {
         super.onResume()
         navigation.bind(findNavController())
+    }
+
+//    private fun changeLanguage() {
+//        val config: Configuration = requireActivity().resources.configuration
+//        val currentLocale =
+//            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+//                config.locales.get(0)
+//            } else {
+//                config.locale
+//            }
+//        val locale = if (currentLocale == Locale("th")) Locale("en") else Locale("th")
+//        Locale.setDefault(locale)
+//        RuntimeLocaleChanger.overrideLocale(requireContext(), locale)
+//        relaunch()
+//    }
+
+
+    private fun changeLanguage() {
+        val config: Configuration = requireContext().applicationContext.resources.configuration
+        val currentLocale =
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                config.locales[0]
+            } else {
+                config.locale
+            }
+        val locale = if (currentLocale.language == "th") "en" else "th"
+        MyContextWrapper.updateLocale(requireContext().applicationContext, locale)
+        relaunch()
+    }
+
+    fun relaunch() {
+        Handler().post {
+            val intent = activity!!.intent
+            intent.addFlags(
+                Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                        or Intent.FLAG_ACTIVITY_NO_ANIMATION
+            )
+            startActivity(intent)
+            activity!!.finish()
+            activity!!.overridePendingTransition(0, 0)
+        }
     }
 }
